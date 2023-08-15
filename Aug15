@@ -1,0 +1,21 @@
+//TWO SUM
+
+class Solution:
+    def twoSum(self, nums, target):
+        a=sorted(nums)
+        i=0
+        j=len(nums)-1
+        while(a[i]+a[j]!=target):
+            if(a[i]+a[j]>target):
+                j=j-1
+            elif(a[i]+a[j]<target):
+                i=i+1
+        l=[]
+        for k in range(len(nums)):
+            if(nums[k]==a[i]):
+                l.append(k)
+            elif(nums[k]==a[j]):
+                l.append(k)
+        return l
+
+
